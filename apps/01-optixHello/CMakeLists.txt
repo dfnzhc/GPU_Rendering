@@ -26,7 +26,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-OPTIX_add_sample_executable(optixHello target_name
+OPTIX_add_sample_executable(01-optixHello target_name
         ${SAMPLES_CUDA_DIR}/helpers.h
         draw_solid_color.cu
         optixHello.cpp

@@ -376,8 +376,8 @@ endfunction()
 
 # For syntax highlighting in clion
 set(CudaFile
-        optixHello/optixHello.h
-        optixHello/draw_solid_color.cu
+        apps/01-optixHello/optixHello.h
+        apps/01-optixHello/draw_solid_color.cu
         )
 
 set_source_files_properties(
@@ -398,7 +398,7 @@ set_property(TARGET HighLight PROPERTY CUDA_PTX_COMPILATION ON)
 # If you wish to start your own sample, you can copy one of the sample's directories.
 # Just make sure you rename all the occurances of the sample's name in the C code as well
 # and the CMakeLists.txt file.
-add_subdirectory(optixHello)
+add_subdirectory(apps/01-optixHello)
 
 # Our sutil library.  The rules to build it are found in the subdirectory.
 add_subdirectory(sutil)
