@@ -387,10 +387,19 @@ set_source_files_properties(
 )
 add_library(HighLight OBJECT
         ${CudaFile}
-#        ${CUDA_LIBRARIES}
-#        ${OPTIX_LIBRARIES}
+        #        ${CUDA_LIBRARIES}
+        #        ${OPTIX_LIBRARIES}
         )
 set_property(TARGET HighLight PROPERTY CUDA_PTX_COMPILATION ON)
+
+
+# Third-party support libraries.
+add_subdirectory(support)
+# Our sutil library.  The rules to build it are found in the subdirectory.
+add_subdirectory(sutil)
+# Our other libraries.
+add_subdirectory(lib/DemandLoading)
+add_subdirectory(lib/ImageReader)
 
 #########################################################
 #  List of samples found in subdirectories.
@@ -399,14 +408,6 @@ set_property(TARGET HighLight PROPERTY CUDA_PTX_COMPILATION ON)
 # Just make sure you rename all the occurances of the sample's name in the C code as well
 # and the CMakeLists.txt file.
 add_subdirectory(apps/01-optixHello)
-
-# Our sutil library.  The rules to build it are found in the subdirectory.
-add_subdirectory(sutil)
-# Our other libraries.
-add_subdirectory(lib/DemandLoading)
-add_subdirectory(lib/ImageReader)
-# Third-party support libraries.
-add_subdirectory(support)
 
 #################################################################
 
