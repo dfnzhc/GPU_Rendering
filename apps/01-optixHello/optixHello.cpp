@@ -39,6 +39,7 @@
 #include <sampleConfig.h>
 
 #include "optixHello.h"
+#include "logger.hpp"
 
 #include <iomanip>
 #include <iostream>
@@ -56,12 +57,13 @@ typedef SbtRecord<int> MissSbtRecord;
 
 static void context_log_cb(unsigned int level, const char* tag, const char* message, void* /*cbdata */)
 {
-    std::cerr << "[" << std::setw(2) << level << "][" << std::setw(12) << tag << "]: "
-              << message << "\n";
+    LOG_DEBUG("[{}]: {}", tag, message);
 }
 
 int main(int argc, char* argv[])
 {
+    San::LogSystem logger{};
+    
     std::string outfile;
     int width = 512;
     int height = 384;
