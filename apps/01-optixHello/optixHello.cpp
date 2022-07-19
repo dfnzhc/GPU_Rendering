@@ -296,7 +296,7 @@ int main(int argc, char* argv[])
         }
     }
     catch (std::exception& e) {
-        std::cerr << "Caught exception: " << e.what() << "\n";
+        LOG_ERROR("Caught exception: {}", e.what());
         return 1;
     }
     return 0;
