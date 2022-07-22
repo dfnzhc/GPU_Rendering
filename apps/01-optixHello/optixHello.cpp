@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
         char log[2048]; // For error reporting from OptiX creation functions
 
         //
-        // Initialize CUDA and create OptiX context
+        // 初始化 CUDA 以及创建 Optix 上下文
         //
         OptixDeviceContext context = nullptr;
         {
@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
         }
 
         //
-        // Create module
+        // 创建 module
         //
         OptixModule module = nullptr;
         OptixPipelineCompileOptions pipeline_compile_options = {};
@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
         }
 
         //
-        // Create program groups, including NULL miss and hitgroups
+        // 创建程序组
         //
         OptixProgramGroup raygen_prog_group = nullptr;
         OptixProgramGroup miss_prog_group = nullptr;
@@ -145,7 +145,7 @@ int main(int argc, char* argv[])
                 &raygen_prog_group
             ));
 
-            // Leave miss group's module and entryfunc name null
+            // 让 miss 模组暂时为空
             OptixProgramGroupDesc miss_prog_group_desc = {};
             miss_prog_group_desc.kind = OPTIX_PROGRAM_GROUP_KIND_MISS;
             sizeof_log = sizeof(log);
@@ -161,7 +161,7 @@ int main(int argc, char* argv[])
         }
 
         //
-        // Link pipeline
+        // 链接管线
         //
         OptixPipeline pipeline = nullptr;
         {
@@ -203,7 +203,7 @@ int main(int argc, char* argv[])
         }
 
         //
-        // Set up shader binding table
+        // 设置 shader binding table(SBT)
         //
         OptixShaderBindingTable sbt = {};
         {
@@ -266,7 +266,7 @@ int main(int argc, char* argv[])
         }
 
         //
-        // Display results
+        // 显示结果
         //
         {
             sutil::ImageBuffer buffer;
@@ -281,7 +281,7 @@ int main(int argc, char* argv[])
         }
 
         //
-        // Cleanup
+        // 清理
         //
         {
             CUDA_CHECK(cudaFree(reinterpret_cast<void*>( sbt.raygenRecord       )));
