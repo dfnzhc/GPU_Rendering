@@ -109,7 +109,6 @@ int main(int argc, char* argv[])
             const char* input = sutil::getInputData(OPTIX_SAMPLE_NAME, OPTIX_SAMPLE_DIR, "draw_solid_color.cu", inputSize);
 
             size_t sizeof_log = sizeof(log);
-
             OPTIX_CHECK_LOG(optixModuleCreateFromPTX(
                 context,
                 &module_compile_options,
