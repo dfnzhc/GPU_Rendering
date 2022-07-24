@@ -298,5 +298,6 @@ int main(int argc, char* argv[])
         LOG_ERROR("Caught exception: {}", e.what());
         return 1;
     }
+    
     return 0;
 }
