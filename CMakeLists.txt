@@ -378,6 +378,8 @@ endfunction()
 set(CudaFile
         apps/01-optixHello/draw_solid_color.cu
         apps/02-triangle/draw_triangle.cu
+        apps/03-sphere/draw_sphere.cu
+        apps/04-curves/draw_curves.cu
         )
 
 set_source_files_properties(
@@ -409,6 +411,8 @@ add_subdirectory(lib/ImageReader)
 # and the CMakeLists.txt file.
 add_subdirectory(apps/01-optixHello)
 add_subdirectory(apps/02-triangle)
+add_subdirectory(apps/03-sphere)
+add_subdirectory(apps/04-curves)
 
 #################################################################
 
