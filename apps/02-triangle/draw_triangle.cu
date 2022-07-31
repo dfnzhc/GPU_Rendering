@@ -42,7 +42,7 @@ static __forceinline__ __device__ void setPayload(float3 p)
     optixSetPayload_2(float_as_int(p.z));
 }
 
-static __forceinline__ __device__ void computRay(uint3 idx, uint3 dim, float3& origin, float3& dir)
+static __forceinline__ __device__ void computeRay(uint3 idx, uint3 dim, float3& origin, float3& dir)
 {
     const float3 U = params.cam_u;
     const float3 V = params.cam_v;
@@ -62,7 +62,7 @@ __global__ void __raygen__triangle()
 
     // 按照所映射的索引，计算光线
     float3 rayOrigin, rayDir;
-    computRay(idx, dim, rayOrigin, rayDir);
+    computeRay(idx, dim, rayOrigin, rayDir);
 
     // 向场景射出光线
     unsigned int p0, p1, p2;
