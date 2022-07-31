@@ -376,10 +376,10 @@ endfunction()
 
 # For syntax highlighting in clion
 set(CudaFile
-        apps/01-optixHello/draw_solid_color.cu
-        apps/02-triangle/draw_triangle.cu
-        apps/03-sphere/draw_sphere.cu
-        apps/04-curves/draw_curves.cu
+        apps/SDKSamples/01-optixHello/draw_solid_color.cu
+        apps/SDKSamples/02-triangle/draw_triangle.cu
+        apps/SDKSamples/03-sphere/draw_sphere.cu
+        apps/SDKSamples/04-curves/draw_curves.cu
         )
 
 set_source_files_properties(
@@ -409,10 +409,10 @@ add_subdirectory(lib/ImageReader)
 # If you wish to start your own sample, you can copy one of the sample's directories.
 # Just make sure you rename all the occurances of the sample's name in the C code as well
 # and the CMakeLists.txt file.
-add_subdirectory(apps/01-optixHello)
-add_subdirectory(apps/02-triangle)
-add_subdirectory(apps/03-sphere)
-add_subdirectory(apps/04-curves)
+add_subdirectory(apps/SDKSamples/01-optixHello)
+add_subdirectory(apps/SDKSamples/02-triangle)
+add_subdirectory(apps/SDKSamples/03-sphere)
+add_subdirectory(apps/SDKSamples/04-curves)
 
 #################################################################
 
