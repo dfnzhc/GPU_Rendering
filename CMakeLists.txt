@@ -381,6 +381,9 @@ set(CudaFile
         apps/SDKSamples/03-sphere/draw_sphere.cu
         apps/SDKSamples/04-curves/draw_curves.cu
         apps/SDKSamples/05-callable/callable.cu
+        apps/SDKSamples/06-whitted/camera.cu
+        apps/SDKSamples/06-whitted/geometry.cu
+        apps/SDKSamples/06-whitted/shading.cu
         )
 
 set_source_files_properties(
@@ -415,6 +418,7 @@ add_subdirectory(apps/SDKSamples/02-triangle)
 add_subdirectory(apps/SDKSamples/03-sphere)
 add_subdirectory(apps/SDKSamples/04-curves)
 add_subdirectory(apps/SDKSamples/05-callable)
+add_subdirectory(apps/SDKSamples/06-whitted)
 
 #################################################################
 
