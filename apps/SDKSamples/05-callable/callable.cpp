@@ -705,6 +705,8 @@ void cleanupState(CallableProgramsState& state)
 
 int main(int argc, char* argv[])
 {
+    San::LogSystem logger{};
+
     CallableProgramsState state;
     state.params.width = 768;
     state.params.height = 768;
